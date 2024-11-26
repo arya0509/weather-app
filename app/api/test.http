@@ -1,0 +1,7 @@
+GET http://localhost:3000/api/city?q=CALGARY
+###
+GET http://localhost:3000/api/currentForecast?locationKey=52479
+###
+GET http://localhost:3000/api/fiveDayForecast?locationKey=52479
+###
+GET  http://localhost:3000/api/oneDayForecast?locationKey=52479
