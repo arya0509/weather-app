@@ -5,3 +5,7 @@ GET http://localhost:3000/api/currentForecast?locationKey=52479
 GET http://localhost:3000/api/fiveDayForecast?locationKey=52479
 ###
 GET  http://localhost:3000/api/oneDayForecast?locationKey=52479
+###
+GET http://localhost:3000/api/autoCompleteSearch?q=cal
+###
+GET http://localhost:3000/api/twelveHoursForecast?locationKey=52479
