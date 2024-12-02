@@ -10,14 +10,25 @@ export default function Home() {
   const [city, setCity] = useState("CALGARY");
   const [locationKey, setLocationKey] = useState("");
   const [currTemp, setCurrTemp] = useState("");
-  const [twelveHourForecast, setTwelveHourForecast] = useState([]);
-  const [fiveDaysForecast, setFiveDaysForecast] = useState([]);
-  useEffect(async ()=>{
-    setLocationKey( await getLocationKey(city));
-    setCurrTemp( await getCurrTemp(locationKey));
-    setTwelveHourForecast(await getTwelveHourForecast(locationKey));
-    setFiveDaysForecast(await getFiveDaysForecast(locationKey));
-  },[]);
+  const [twelveHourForecast, setTwelveHourForecast] = useState();
+  const [fiveDaysForecast, setFiveDaysForecast] = useState();
+  useEffect(() => {
+    async function fetchData(){
+    const fetchedLocationKey = await getLocationKey(city);
+    const fetchedCurrTemp = await getCurrTemp(fetchedLocationKey); 
+    const fetchedTwelveHourForecast = await getTwelveHourForecast(fetchedLocationKey);    
+    const fetchedFiveDaysForecast = await getFiveDaysForecast(fetchedLocationKey);
+   
+    setLocationKey(fetchedLocationKey);
+    setCurrTemp(fetchedCurrTemp);
+    setTwelveHourForecast(fetchedTwelveHourForecast);
+    setFiveDaysForecast(fetchedFiveDaysForecast);
+    console.log(locationKey, currTemp, twelveHourForecast, fiveDaysForecast);
+  }
+  fetchData();
+  }
+
+  ,[city]);
   async function getLocationKey(city) {
     const response=await fetch(`http://localhost:3000/api/city?q=${city}`);
     const data = await response.json();
@@ -38,7 +49,7 @@ export default function Home() {
   async function getFiveDaysForecast(locationKey) {
     const response=await fetch(`http://localhost:3000/api/fiveDayForecast?locationKey=${locationKey}`);
     const data = await response.json();
-    return data;
+    return data["DailyForecasts"];
   }
   return (
    <div className="bg-gray-900 p-6 h-screen ">
@@ -46,7 +57,7 @@ export default function Home() {
       <div className=" flex flex-row h-[90%] w-[100%]">
         <NavigationMenu />
         <div className="ml-8 w-[75%]">
-          <CurrentTemp />
+          <CurrentTemp temp={currTemp} location={city} />
           <TodaysWeather />
         </div>
         <FiveDaysTemp></FiveDaysTemp>

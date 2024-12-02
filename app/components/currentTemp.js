@@ -1,9 +1,9 @@
 'use client';
 import { useState } from "react";
 import cloud from '../res/cloud.png';
-export default function CurrentTemp() {
-    const [temp, setTemp] = useState(-8);
-    const [location, setLocation] = useState('Calgary, AB');
+export default function CurrentTemp(params) {
+    const [temp, setTemp] = useState(params.temp);
+    const [location, setLocation] = useState(params.location);
     return(
         <div className="ml-6 flex justify-center items-center h-[70%] w-[80%]">
             <div className=" p-2 justify-center items-center  rounded-lg h-[90%] w-full">
