@@ -21,14 +21,17 @@ export default function Home() {
    
     setLocationKey(fetchedLocationKey);
     setCurrTemp(fetchedCurrTemp);
-    setTwelveHourForecast(fetchedTwelveHourForecast);
+    setTwelveHourForecast((prev)=>fetchedTwelveHourForecast);
     setFiveDaysForecast(fetchedFiveDaysForecast);
     console.log(locationKey, currTemp, twelveHourForecast, fiveDaysForecast);
   }
   fetchData();
   }
-
   ,[city]);
+
+  useEffect(() => {
+    console.log(locationKey, currTemp);
+  }, [locationKey, currTemp, twelveHourForecast]);
   async function getLocationKey(city) {
     const response=await fetch(`http://localhost:3000/api/city?q=${city}`);
     const data = await response.json();
@@ -51,6 +54,9 @@ export default function Home() {
     const data = await response.json();
     return data["DailyForecasts"];
   }
+  if (!locationKey || !currTemp || !twelveHourForecast || !fiveDaysForecast) {
+    return <div>Loading...</div>;  // or any loading indicator you prefer
+  }
   return (
    <div className="bg-gray-900 p-6 h-screen ">
       <SearchBar />
@@ -58,9 +64,9 @@ export default function Home() {
         <NavigationMenu />
         <div className="ml-8 w-[75%]">
           <CurrentTemp temp={currTemp} location={city} />
-          <TodaysWeather />
+          <TodaysWeather twelveHourForecast={twelveHourForecast} />
         </div>
-        <FiveDaysTemp></FiveDaysTemp>
+        <FiveDaysTemp fiveDaysForecast={fiveDaysForecast}></FiveDaysTemp>
       </div>
       
    </div>
