@@ -1,5 +1,6 @@
 'use client';
-import { useState,useRouter } from "react";
+import { useState } from "react";
+import { useRouter } from "next/router";
 import SearchBar from "../components/searchBar";
 import NavigationMenu from "../components/navigationMenu";
 import Results from "../components/results";
