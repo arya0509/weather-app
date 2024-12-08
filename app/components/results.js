@@ -3,23 +3,24 @@ import Home from "../page";
 import { useState } from "react";
 
 export default function Results(props) {
-    const {handleClicked} = props;
+    const {handleClicked} = props.handleClicked;
+    const results = props.topCities;
     const [clicked, setClicked] = useState(false);
     const [city, setCity] = useState("");
-    const results = [
-        {city: "New York", country:{EnglishName:"United States"}},
-        {city: "Los Angeles", country:{EnglishName:"United States"}},
-        {city: "Chicago", country:{EnglishName:"United States"}},
-        {city: "Houston", country:{EnglishName:"United States"}},
-        {city:"Calgary", country:{EnglishName:"Canada"}},
-        {city:"Toronto", country:{EnglishName:"Canada"}},
-        {city:"Delhi", country:{EnglishName:"India"}},
-        {city:"Mumbai", country:{EnglishName:"India"}},
-        {city:"Shanghai", country:{EnglishName:"China"}},
-        {city:"Beijing", country:{EnglishName:"China"}},
-        {city:"London", country:{EnglishName:"United Kingdom"}},
-        {city:"Manchester", country:{EnglishName:"United Kingdom"}},
-    ];
+    // const results = [
+    //     {city: "New York", country:{EnglishName:"United States"}},
+    //     {city: "Los Angeles", country:{EnglishName:"United States"}},
+    //     {city: "Chicago", country:{EnglishName:"United States"}},
+    //     {city: "Houston", country:{EnglishName:"United States"}},
+    //     {city:"Calgary", country:{EnglishName:"Canada"}},
+    //     {city:"Toronto", country:{EnglishName:"Canada"}},
+    //     {city:"Delhi", country:{EnglishName:"India"}},
+    //     {city:"Mumbai", country:{EnglishName:"India"}},
+    //     {city:"Shanghai", country:{EnglishName:"China"}},
+    //     {city:"Beijing", country:{EnglishName:"China"}},
+    //     {city:"London", country:{EnglishName:"United Kingdom"}},
+    //     {city:"Manchester", country:{EnglishName:"United Kingdom"}},
+    // ];
     const handleClick = (city) => {
        handleClicked(city);
        
