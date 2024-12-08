@@ -1,9 +1,4 @@
-import cloud from '../res/cloud.png';
-import partlyCloudy from '../res/partlyCloudy.png';
-import raining from '../res/raining.png';
-import snow from '../res/snow.png';
-import sun from '../res/sun.png';
-import wind from '../res/wind.png';
+
 export default function OneDayTemp(params) {
     function convertToCelsius(fahrenheit) {
         return Math.round((fahrenheit - 32) * 5 / 9);
@@ -19,23 +14,23 @@ export default function OneDayTemp(params) {
     }
     function getIconType(iconPhrase){
         if(iconPhrase.includes('Partly Cloudy')||iconPhrase.includes('Mostly Cloudy')||iconPhrase.includes('Intermittent clouds')){
-            return partlyCloudy;
+            return '/res/partlyCloudy.png';
 
         }
         else if(iconPhrase.includes('Cloud')){
-            return cloud;
+            return '/res/cloud.png';
         }
         else if(iconPhrase.includes('Rain')){
-            return raining;
+            return '/res/raining.png';
         }
         else if(iconPhrase.includes('Snow')){
-            return snow;
+            return '/res/snow.png';
         }
         else if(iconPhrase.includes('Sun')){
-            return sun;
+            return '/res/sun.png';
         }
         else if(iconPhrase.includes('Wind')){
-            return wind;
+            return '/res/wind.png';
         }
        
     }
@@ -44,8 +39,8 @@ export default function OneDayTemp(params) {
     return(
         <div className='flex flex-row items-center justify-between px-2 border-b-2 h-24'> 
             <h3 className="font-bold">{shorten(time)}</h3>
-            <img src={icon.src} alt="cloud" className="h-15 w-10"></img>
-            <h3 className="font-bold">{convertToCelsius(maxTemp)}/{convertToCelsius(minTemp)} C</h3>
+            <img src={icon} alt="weatherIcon" className="h-15 w-10"></img>
+            <h3 className="font-bold">{convertToCelsius(maxTemp)}°/{convertToCelsius(minTemp)}° C</h3>
         </div>
     )
 }

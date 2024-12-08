@@ -1,0 +1,195 @@
+[
+    {
+      "DateTime": "2024-12-03T16:00:00-07:00",
+      "EpochDateTime": 1733266800,
+      "WeatherIcon": 4,
+      "IconPhrase": "Intermittent clouds",
+      "HasPrecipitation": false,
+      "IsDaylight": true,
+      "Temperature": {
+        "Value": 42,
+        "Unit": "F",
+        "UnitType": 18
+      },
+      "PrecipitationProbability": 0,
+      "MobileLink": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=1&hbhhour=16&lang=en-us",
+      "Link": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=1&hbhhour=16&lang=en-us"
+    },
+    {
+      "DateTime": "2024-12-03T17:00:00-07:00",
+      "EpochDateTime": 1733270400,
+      "WeatherIcon": 38,
+      "IconPhrase": "Mostly cloudy",
+      "HasPrecipitation": false,
+      "IsDaylight": false,
+      "Temperature": {
+        "Value": 41,
+        "Unit": "F",
+        "UnitType": 18
+      },
+      "PrecipitationProbability": 0,
+      "MobileLink": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=1&hbhhour=17&lang=en-us",
+      "Link": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=1&hbhhour=17&lang=en-us"
+    },
+    {
+      "DateTime": "2024-12-03T18:00:00-07:00",
+      "EpochDateTime": 1733274000,
+      "WeatherIcon": 38,
+      "IconPhrase": "Mostly cloudy",
+      "HasPrecipitation": false,
+      "IsDaylight": false,
+      "Temperature": {
+        "Value": 39,
+        "Unit": "F",
+        "UnitType": 18
+      },
+      "PrecipitationProbability": 3,
+      "MobileLink": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=1&hbhhour=18&lang=en-us",
+      "Link": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=1&hbhhour=18&lang=en-us"
+    },
+    {
+      "DateTime": "2024-12-03T19:00:00-07:00",
+      "EpochDateTime": 1733277600,
+      "WeatherIcon": 7,
+      "IconPhrase": "Cloudy",
+      "HasPrecipitation": false,
+      "IsDaylight": false,
+      "Temperature": {
+        "Value": 37,
+        "Unit": "F",
+        "UnitType": 18
+      },
+      "PrecipitationProbability": 7,
+      "MobileLink": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=1&hbhhour=19&lang=en-us",
+      "Link": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=1&hbhhour=19&lang=en-us"
+    },
+    {
+      "DateTime": "2024-12-03T20:00:00-07:00",
+      "EpochDateTime": 1733281200,
+      "WeatherIcon": 7,
+      "IconPhrase": "Cloudy",
+      "HasPrecipitation": false,
+      "IsDaylight": false,
+      "Temperature": {
+        "Value": 35,
+        "Unit": "F",
+        "UnitType": 18
+      },
+      "PrecipitationProbability": 7,
+      "MobileLink": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=1&hbhhour=20&lang=en-us",
+      "Link": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=1&hbhhour=20&lang=en-us"
+    },
+    {
+      "DateTime": "2024-12-03T21:00:00-07:00",
+      "EpochDateTime": 1733284800,
+      "WeatherIcon": 7,
+      "IconPhrase": "Cloudy",
+      "HasPrecipitation": false,
+      "IsDaylight": false,
+      "Temperature": {
+        "Value": 33,
+        "Unit": "F",
+        "UnitType": 18
+      },
+      "PrecipitationProbability": 7,
+      "MobileLink": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=1&hbhhour=21&lang=en-us",
+      "Link": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=1&hbhhour=21&lang=en-us"
+    },
+    {
+      "DateTime": "2024-12-03T22:00:00-07:00",
+      "EpochDateTime": 1733288400,
+      "WeatherIcon": 7,
+      "IconPhrase": "Cloudy",
+      "HasPrecipitation": false,
+      "IsDaylight": false,
+      "Temperature": {
+        "Value": 32,
+        "Unit": "F",
+        "UnitType": 18
+      },
+      "PrecipitationProbability": 7,
+      "MobileLink": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=1&hbhhour=22&lang=en-us",
+      "Link": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=1&hbhhour=22&lang=en-us"
+    },
+    {
+      "DateTime": "2024-12-03T23:00:00-07:00",
+      "EpochDateTime": 1733292000,
+      "WeatherIcon": 7,
+      "IconPhrase": "Cloudy",
+      "HasPrecipitation": false,
+      "IsDaylight": false,
+      "Temperature": {
+        "Value": 30,
+        "Unit": "F",
+        "UnitType": 18
+      },
+      "PrecipitationProbability": 7,
+      "MobileLink": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=1&hbhhour=23&lang=en-us",
+      "Link": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=1&hbhhour=23&lang=en-us"
+    },
+    {
+      "DateTime": "2024-12-04T00:00:00-07:00",
+      "EpochDateTime": 1733295600,
+      "WeatherIcon": 7,
+      "IconPhrase": "Cloudy",
+      "HasPrecipitation": false,
+      "IsDaylight": false,
+      "Temperature": {
+        "Value": 30,
+        "Unit": "F",
+        "UnitType": 18
+      },
+      "PrecipitationProbability": 7,
+      "MobileLink": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=2&hbhhour=0&lang=en-us",
+      "Link": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=2&hbhhour=0&lang=en-us"
+    },
+    {
+      "DateTime": "2024-12-04T01:00:00-07:00",
+      "EpochDateTime": 1733299200,
+      "WeatherIcon": 7,
+      "IconPhrase": "Cloudy",
+      "HasPrecipitation": false,
+      "IsDaylight": false,
+      "Temperature": {
+        "Value": 29,
+        "Unit": "F",
+        "UnitType": 18
+      },
+      "PrecipitationProbability": 7,
+      "MobileLink": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=2&hbhhour=1&lang=en-us",
+      "Link": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=2&hbhhour=1&lang=en-us"
+    },
+    {
+      "DateTime": "2024-12-04T02:00:00-07:00",
+      "EpochDateTime": 1733302800,
+      "WeatherIcon": 7,
+      "IconPhrase": "Cloudy",
+      "HasPrecipitation": false,
+      "IsDaylight": false,
+      "Temperature": {
+        "Value": 29,
+        "Unit": "F",
+        "UnitType": 18
+      },
+      "PrecipitationProbability": 7,
+      "MobileLink": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=2&hbhhour=2&lang=en-us",
+      "Link": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=2&hbhhour=2&lang=en-us"
+    },
+    {
+      "DateTime": "2024-12-04T03:00:00-07:00",
+      "EpochDateTime": 1733306400,
+      "WeatherIcon": 7,
+      "IconPhrase": "Cloudy",
+      "HasPrecipitation": false,
+      "IsDaylight": false,
+      "Temperature": {
+        "Value": 27,
+        "Unit": "F",
+        "UnitType": 18
+      },
+      "PrecipitationProbability": 7,
+      "MobileLink": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=2&hbhhour=3&lang=en-us",
+      "Link": "http://www.accuweather.com/en/ca/calgary/t2p/hourly-weather-forecast/52479?day=2&hbhhour=3&lang=en-us"
+    }
+  ]
+  

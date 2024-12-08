@@ -1,6 +1,6 @@
 'use client';
 import { useState } from "react";
-import cloud from '../res/cloud.png';
+
 export default function CurrentTemp(params) {
     const [temp, setTemp] = useState(params.temp);
     const [location, setLocation] = useState(params.location);
@@ -12,7 +12,7 @@ export default function CurrentTemp(params) {
                         <h2 className="text-9xl">{temp}°C</h2>
                         <h3 className="text-2xl">{location}</h3>
                     </div>
-                    <img src={cloud.src} alt="cloud" className="h-40 w-40"></img>
+                    <img src='/res/cloud.png' alt="cloud" className="h-40 w-40"></img>
                 </div>
             </div>
         </div>

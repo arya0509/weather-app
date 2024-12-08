@@ -1,13 +1,17 @@
 'use client';
 import { useEffect } from "react";
-import { useState } from "react";
+import { useState,useContext } from "react";
 import SearchBar from "./components/searchBar";
 import NavigationMenu from "./components/navigationMenu";
 import CurrentTemp from "./components/currentTemp";
 import TodaysWeather from "./components/todaysWeather";
 import FiveDaysTemp from "./components/fiveDaysTemp";
-export default function Home() {
-  const [city, setCity] = useState("CALGARY");
+import fiveDays from "./tempData/fiveDays.json";
+import twelveHours from "./tempData/twelveHours.json";
+export default function Home(props) {
+  const [city, setCity] = useState(props?.city || "Calgary");
+
+
   const [locationKey, setLocationKey] = useState("");
   const [currTemp, setCurrTemp] = useState("");
   const [twelveHourForecast, setTwelveHourForecast] = useState();
@@ -21,17 +25,15 @@ export default function Home() {
    
     setLocationKey(fetchedLocationKey);
     setCurrTemp(fetchedCurrTemp);
-    setTwelveHourForecast((prev)=>fetchedTwelveHourForecast);
+    setTwelveHourForecast(fetchedTwelveHourForecast);
     setFiveDaysForecast(fetchedFiveDaysForecast);
     console.log(locationKey, currTemp, twelveHourForecast, fiveDaysForecast);
   }
   fetchData();
   }
-  ,[city]);
+  ,[]);
 
-  useEffect(() => {
-    console.log(locationKey, currTemp);
-  }, [locationKey, currTemp, twelveHourForecast]);
+
   async function getLocationKey(city) {
     const response=await fetch(`http://localhost:3000/api/city?q=${city}`);
     const data = await response.json();
@@ -54,8 +56,14 @@ export default function Home() {
     const data = await response.json();
     return data["DailyForecasts"];
   }
+  // uncomment this if the api is working
   if (!locationKey || !currTemp || !twelveHourForecast || !fiveDaysForecast) {
-    return <div>Loading...</div>;  // or any loading indicator you prefer
+    return (
+    <div>Loading...
+      <p>Please note that if the loading is taking a long time, it  means the free calls for this API have been exhausted.</p>
+      <p>I am using the free version of Accuweather API, which permits only 50 calls per day</p>
+      <p>Therefore, please be patient enough and try again tomorrow</p>
+    </div>);  
   }
   return (
    <div className="bg-gray-900 p-6 h-screen ">
