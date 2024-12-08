@@ -6,8 +6,7 @@ import NavigationMenu from "./components/navigationMenu";
 import CurrentTemp from "./components/currentTemp";
 import TodaysWeather from "./components/todaysWeather";
 import FiveDaysTemp from "./components/fiveDaysTemp";
-import fiveDays from "./tempData/fiveDays.json";
-import twelveHours from "./tempData/twelveHours.json";
+
 export default function Home(props) {
   const [city, setCity] = useState(props?.city || "Calgary");
 
