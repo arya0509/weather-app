@@ -23,6 +23,9 @@ export default function Page() {
         setCity(city);
         setClicked(true);
     }
+    if (!topCities) {
+        return <p>Loading...</p>; 
+    }
     return (
         <div>
            
