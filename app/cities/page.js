@@ -1,5 +1,5 @@
 'use client';
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useRouter } from "next/router";
 import SearchBar from "../components/searchBar";
 import NavigationMenu from "../components/navigationMenu";
@@ -7,9 +7,18 @@ import Results from "../components/results";
 import Home from "../page";
 export default function Page() {
     const router = useRouter();
-    const {topCities} = router.query;
+   const [topCities, setTopCities] = useState();
     const [city, setCity] = useState("");
     const [clicked, setClicked] = useState(false);
+    useEffect(() => {
+        if(router.query.topCities) {
+            try {
+                setTopCities(JSON.parse(router.query.topCities));
+            } catch (error) {
+                console.error("Failed to parse topCities:", error);
+            }
+        }
+    }, [router.query.topCities]);
     const handleClicked = (city) => {
         setCity(city);
         setClicked(true);
