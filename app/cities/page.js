@@ -1,6 +1,6 @@
 'use client';
 import { useState,useEffect } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import SearchBar from "../components/searchBar";
 import NavigationMenu from "../components/navigationMenu";
 import Results from "../components/results";
@@ -11,14 +11,17 @@ export default function Page() {
     const [city, setCity] = useState("");
     const [clicked, setClicked] = useState(false);
     useEffect(() => {
-        if(router.query.topCities) {
-            try {
-                setTopCities(JSON.parse(router.query.topCities));
-            } catch (error) {
-                console.error("Failed to parse topCities:", error);
-            }
+        async function fetchData(){
+            const fetchedTopCities = await getTopCities();
+            setTopCities(fetchedTopCities);
         }
-    }, [router.query.topCities]);
+        fetchData();
+    },[]);
+    async function getTopCities() {
+        const response=await fetch(`http://localhost:3000/api/topCities`);
+        const data = await response.json();
+        return data;
+      }
     const handleClicked = (city) => {
         setCity(city);
         setClicked(true);

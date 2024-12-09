@@ -3,7 +3,7 @@ import Home from "../page";
 import { useState } from "react";
 
 export default function Results(props) {
-    const {handleClicked} = props.handleClicked;
+    const handleClicked = props.handleClicked;
     const results = props.topCities;
     const [clicked, setClicked] = useState(false);
     const [city, setCity] = useState("");
@@ -36,7 +36,7 @@ export default function Results(props) {
                         <div key={index} className=" flex justify-between items-center border-b border-gray-700 py-4 hover:bg-slate-800">
                             <button className="  h-full w-full" onClick={() => handleClick(result.city)}>
                                 <div className="flex items-center">
-                                    <h2 className="text-xl ml-4">{result.city}, {result.country.EnglishName}</h2>
+                                    <h2 className="text-xl ml-4">{result.EnglishName}</h2>
                                 </div>
                             </button>
                            

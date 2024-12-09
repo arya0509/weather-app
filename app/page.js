@@ -8,7 +8,7 @@ import TodaysWeather from "./components/todaysWeather";
 import FiveDaysTemp from "./components/fiveDaysTemp";
 
 export default function Home(props) {
-  const [city, setCity] = useState(props?.city || "Calgary");
+  const [city, setCity] = useState(props?.city || "calgary");
   const [topCitites, setTopCities] = useState();
   const [locationKey, setLocationKey] = useState("");
   const [currTemp, setCurrTemp] = useState("");
@@ -20,13 +20,11 @@ export default function Home(props) {
     const fetchedCurrTemp = await getCurrTemp(fetchedLocationKey); 
     const fetchedTwelveHourForecast = await getTwelveHourForecast(fetchedLocationKey);    
     const fetchedFiveDaysForecast = await getFiveDaysForecast(fetchedLocationKey);
-    const fetchedTopCities = await getTopCities();
    
     setLocationKey(fetchedLocationKey);
     setCurrTemp(fetchedCurrTemp);
     setTwelveHourForecast(fetchedTwelveHourForecast);
     setFiveDaysForecast(fetchedFiveDaysForecast);
-    setTopCities(fetchedTopCities);
   }
   fetchData();
   }
@@ -55,12 +53,9 @@ export default function Home(props) {
     const data = await response.json();
     return data["DailyForecasts"];
   }
-  async function getTopCities() {
-    const response=await fetch(`http://localhost:3000/api/topCities`);
-    const data = await response.json();
-    return data;
-  }
+  
   function handleCityChange(city) {
+    console.log("City changes to", city);
     setCity(city);
   }
   // uncomment this if the api is working
