@@ -34,7 +34,7 @@ export default function Results(props) {
                 {
                     results.map((result, index) => (
                         <div key={index} className=" flex justify-between items-center border-b border-gray-700 py-4 hover:bg-slate-800">
-                            <button className="  h-full w-full" onClick={() => handleClick(result.city)}>
+                            <button className="  h-full w-full" onClick={() => handleClick(result.EnglishName)}>
                                 <div className="flex items-center">
                                     <h2 className="text-xl ml-4">{result.EnglishName}</h2>
                                 </div>
