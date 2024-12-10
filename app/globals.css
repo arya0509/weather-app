@@ -19,3 +19,16 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #000e25; /* Color of the scrollbar track */
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #5787cf; /* Color of the scrollbar thumb */
+  border-radius: 4px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background: #374151; /* Hover effect */
+}

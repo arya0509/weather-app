@@ -6,7 +6,7 @@ export default function HourlyTemp(params) {
     ;
     
     return(
-        <div className="w-24 mx-6 flex flex-col border-r-2 ">
+        <div className="w-24 mx-6 flex flex-col   ">
             <h3 className='font-bold'>{time}:00</h3>
             <img src={hourlyIconPhrases} alt="weatherIcon" className="h-15 w-10"></img>
             <h3 className='font-bold'>{temp}°C</h3>

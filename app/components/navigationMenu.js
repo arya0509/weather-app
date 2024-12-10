@@ -12,11 +12,7 @@ export default function NavigationMenu() {
                                 Home
                             </Link>
                         </li>
-                        <li  className="p-2">
-                            <Link href={`/cities`}>
-                                Cities
-                            </Link>
-                        </li>
+                        
                         <li  className="p-2">
                             <Link href="/about">
                                 About

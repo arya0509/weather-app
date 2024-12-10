@@ -12,13 +12,13 @@ export default function TodaysWeather(params) {
         hourlyIcons.push(twelveHourForecast["forecast"]["forecastday"][0]["hour"][i]["condition"]["icon"]);
     }
     return(
-        <div className="bg-slate-800 w-[90%] h-48 overflow-hidden overflow-x-visible ">
+        <div className="bg-slate-800 w-[90%] h-48 overflow-hidden overflow-x-visible scrollbar-custom">
             <h2 className="text-white font-extrabold m-3 mt-0">Today&apos;s Weather</h2>
             <div className="flex flex-row mt-5">
                 {
                     hourlyTemps.map((temp,index) => {
                         return(
-                            <div key={index} >
+                            <div key={index} className="hover:border-2 border-r-2" >
                                 <HourlyTemp time={hourlyTimes[index]} temp={temp} hourlyIconPhrases={hourlyIcons[index]}></HourlyTemp>
                             </div>
                         )
