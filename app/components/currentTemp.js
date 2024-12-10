@@ -5,7 +5,7 @@ export default function CurrentTemp(params) {
     const temp = params.temp;
     const location = params.location;
     const currWeatherIcon = params.currWeatherIcon;
-    const[date,setDate] = useState(params.date);
+    const date=params.date;
     
     return(
         <div className="ml-6 flex justify-center items-center h-[70%] w-[80%]">

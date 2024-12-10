@@ -15,8 +15,8 @@ export default function Home() {
   const [currWeatherIcon, setCurrWeatherIcon] = useState();
   const [additionalInfo, setAdditionalInfo] = useState();
   const [openPopup, setOpenPopup] = useState(false);
-  const [currDate, setCurrDate] = useState();
-  const [otherDate, setOtherDate] = useState();
+  const [currDate, setCurrDate] = useState("");
+  const [otherDate, setOtherDate] = useState("");
   useEffect(() => {
     async function fetchData() {
       try {

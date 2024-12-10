@@ -35,9 +35,7 @@ export default function FiveDaysTemp(params) {
     
       const date = new Date(Date.UTC(year, month, dayOfMonth));
       const dayOfWeek = date.getUTCDay();
-      if(dayOfWeek === 6) {
-        return days[0];
-      }     
+        
       return days[date.getUTCDay()];
     });
     return (

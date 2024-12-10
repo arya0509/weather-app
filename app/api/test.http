@@ -2,7 +2,7 @@
 ###
 GET http://localhost:3000/api/currentForecast?q=calgary
 ###
-GET http://localhost:3000/api/fiveDayForecast?q=London
+GET http://localhost:3000/api/fiveDayForecast?q=Doha
 ###
 
 GET http://localhost:3000/api/autoCompleteSearch?q=cal
