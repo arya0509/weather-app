@@ -1,17 +1,28 @@
+'use client';
+import { useState } from "react";
 import OneDayTemp from "./oneDayTemp"
 export default function FiveDaysTemp(params) {
     const fiveDaysForecast = params.fiveDaysForecast;
+    const buttonPressed = params.buttonPressed;
     const dailyMaxTemps = []
     const dailyMinTemps = []
     const iconPhrases = []
+    const dates=[]
+    const [twelveHourForecast, setTwelveHourForecast] = useState([]);
     fiveDaysForecast.forecastday.forEach((day) => {
         dailyMaxTemps.push(day.day.maxtemp_c);
         dailyMinTemps.push(day.day.mintemp_c);
         iconPhrases.push(day.day.condition.icon);
+        twelveHourForecast.push(day.hour);
+        dates.push(day.date);
+        
     }
     );
+    function buttonClicked(index){
+        buttonPressed(twelveHourForecast[index],dates[index]);
+    }
     const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
+    
 
     const dailyDays = fiveDaysForecast.forecastday.map((day) => {
       const dateParts = day.date.split('-');
@@ -27,7 +38,7 @@ export default function FiveDaysTemp(params) {
       if(dayOfWeek === 6) {
         return days[0];
       }     
-      return days[date.getUTCDay()+1];
+      return days[date.getUTCDay()];
     });
     return (
         <div className="mt-3 bg-slate-800 h-full w-[30%] flex flex-col justify-center  rounded-md">
@@ -36,7 +47,9 @@ export default function FiveDaysTemp(params) {
                 dailyMaxTemps.map((maxTemp,index) => {
                     return(
                         <div key={index} className="px-2">
-                            <OneDayTemp maxTemp={maxTemp} minTemp={dailyMinTemps[index]} time={dailyDays[index]} iconPhrase={iconPhrases[index]}></OneDayTemp>
+                            <button className="h-full w-full" onClick={()=>buttonClicked(index)}>
+                                <OneDayTemp maxTemp={maxTemp} minTemp={dailyMinTemps[index]} time={dailyDays[index]} iconPhrase={iconPhrases[index]}></OneDayTemp>
+                             </button>
                         </div>
                     )
                 })

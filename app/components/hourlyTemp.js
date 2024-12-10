@@ -3,7 +3,6 @@ import { useState } from "react";
 
 export default function HourlyTemp(params) {
     const {time, temp,hourlyIconPhrases} = params;
-    ;
     
     return(
         <div className="w-24 mx-6 flex flex-col   ">
