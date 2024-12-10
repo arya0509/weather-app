@@ -5,14 +5,11 @@ export default function TodaysWeather(params) {
    const twelveHourForecast = params.twelveHourForecast;
    const hourlyTemps = [];
     const hourlyTimes = [];
-    const hourlyIconPhrases = [];
-    twelveHourForecast.forEach((hourlyForecast) => {
-        hourlyTemps.push(convertTocClesius(hourlyForecast["Temperature"]["Value"]));
-        hourlyTimes.push(hourlyForecast["DateTime"].split("T")[1].split(":")[0]);
-        hourlyIconPhrases.push(hourlyForecast["IconPhrase"]);
-    });
-    function convertTocClesius(fahrenheit) {
-        return Math.round((fahrenheit - 32) * 5 / 9);
+    const hourlyIcons = [];
+    for(let i=0;i<24;i++){
+        hourlyTemps.push(twelveHourForecast["forecast"]["forecastday"][0]["hour"][i]["temp_c"]);
+        hourlyTimes.push(twelveHourForecast["forecast"]["forecastday"][0]["hour"][i]["time"].slice(11,16));
+        hourlyIcons.push(twelveHourForecast["forecast"]["forecastday"][0]["hour"][i]["condition"]["icon"]);
     }
     return(
         <div className="bg-slate-800 w-[90%] h-48 overflow-hidden overflow-x-visible ">
@@ -22,7 +19,7 @@ export default function TodaysWeather(params) {
                     hourlyTemps.map((temp,index) => {
                         return(
                             <div key={index} >
-                                <HourlyTemp time={hourlyTimes[index]} temp={temp} hourlyIconPhrases={hourlyIconPhrases[index]}></HourlyTemp>
+                                <HourlyTemp time={hourlyTimes[index]} temp={temp} hourlyIconPhrases={hourlyIcons[index]}></HourlyTemp>
                             </div>
                         )
 

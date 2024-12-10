@@ -1,10 +1,11 @@
-const apiKey=process.env.ACCUWEATHER_API_KEY;
+const apiKey=process.env.API_KEY;
 
 export async function GET(req,res){
     try{
         const url=new URL(req.url);
-        const locationKey=url.searchParams.get("locationKey");
-        const response=await fetch(`http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${apiKey}`);
+        const q=url.searchParams.get("q");
+       
+        const response=await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${q}&aqi=no`);
         if(response.ok){
             const data=await response.json();
             return new Response(JSON.stringify(data),{status:response.status})

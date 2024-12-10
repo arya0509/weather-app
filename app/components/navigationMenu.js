@@ -1,10 +1,6 @@
 import Link from 'next/link'
-export default function NavigationMenu(props) {
-    const topCities = props.topCities;
-    console.log(typeof topCities);
+export default function NavigationMenu() {
     
-    const serializedCities = encodeURIComponent(JSON.stringify(topCities));
-
     return(
         <div className="flex justify-center items-center  h-full w-40 pb-6 ">
             <div className=" p-2 justify-center items-center bg-slate-800 rounded-lg h-[90%] w-full">
@@ -17,7 +13,7 @@ export default function NavigationMenu(props) {
                             </Link>
                         </li>
                         <li  className="p-2">
-                            <Link href={`/cities?topCities=${serializedCities}`}>
+                            <Link href={`/cities`}>
                                 Cities
                             </Link>
                         </li>
