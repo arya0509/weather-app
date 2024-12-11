@@ -51,7 +51,7 @@ export default function Home() {
 
   async function getCurrTemp( city) {
     
-    const response=await fetch(`http://localhost:3000/api/currentForecast?q=${city}`);
+    const response=await fetch(`/api/currentForecast?q=${city}`);
     const data = await response.json();
     setCurrDate(data.current?.last_updated.split(" ")[0]);
     setCurrWeatherIcon(data.current?.condition.icon);
@@ -59,12 +59,12 @@ export default function Home() {
   }
 
   async function getTwelveHourForecast( city) {
-    const response=await fetch(`http://localhost:3000/api/twelveHoursForecast?q=${city}`);
+    const response=await fetch(`/api/twelveHoursForecast?q=${city}`);
     const data = await response.json();
     return data;
   }
   async function getFiveDaysForecast(city ) {
-    const response=await fetch(`http://localhost:3000/api/fiveDayForecast?q=${city}`);
+    const response=await fetch(`/api/fiveDayForecast?q=${city}`);
     const data = await response.json();
     return data["forecast"];
   }
